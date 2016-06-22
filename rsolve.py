@@ -95,15 +95,3 @@ def add_list_items(list):
             return all
     except TypeError:
         return list
-
-def parse(query):
-    split_query = re.findall('[A-Z][a-z0-9]*|[+=]', query)
-
-    #TODO make regex?
-    #Validate query string, if invalid return None
-    if(split_query.count('=') > 1): return None  # If there is more than one =
-    if((split_query[0] == '+') | (split_query[0] == "=")): return None  # If there is an operator as the first term
-    if((split_query[len(split_query - 1)] == '+') | (split_query[len(split_query - 1)] == "=")): return None  # if there is an op. as last term
-
-    for term in split_query:
-        pass
